@@ -48,7 +48,8 @@ Quick findings :
 
 #### qwen3-next-80b-instruct with no reasoning. 
 
-This was the biggest model of the bunch and performed the worst. Despite explicit instructions in the prompt to read the AGENTS.md file, it just fired off a single netcat command, hit a timeout, and immediately gave up. The whole session lasted 32 seconds. It proved that raw parameter size means nothing for agentic loops if the model can't reason through its failures.
+This was the biggest model of the bunch and performed the worst. Despite explicit instructions in the prompt to read the AGENTS.md file, it just fired off a single netcat command, hit a timeout, and immediately gave up. The whole session lasted 32 seconds. It proved that raw parameter size means nothing for agentic loops if the model can't reason through its failures. The reason for choosing an instruct model is because this models are specially suited to agentic use, although this fact it's not clear to me why it just failed completely, at this stage.
+**Qwen3-Next-80B-Instruct is an advanced Mixture-of-Experts (MoE). It is optimized for following specific commands and handling ultra-long texts. Operating with 80B total parameters and 3B active per layer, it offers high-speed inference, highly regarded in open-source AI for agentic workflows.**
 
 Finding:
 - Biggest model, performed the worst it could be related with the training the model might have for agentic loops or the benchmark scoring for this type of tasking.
